@@ -17,7 +17,7 @@
         {{- $image := "" -}}
         {{- $imgWidth := 0 -}}
         {{- $imgHeight := 0 -}}
-        {{- if .Params.summaryImage -}} 
+        {{- if .Params.summaryImage -}}
           {{- $image = .Page.Resources.GetMatch .Params.summaryImage -}}
           {{- $imgWidth = $image.Width -}}
           {{- $imgHeight = $image.Height -}}
@@ -33,7 +33,7 @@
         <a href="{{- .Permalink | relURL -}}">
         {{ if .Page.Params.keepImageRatio }}
           {{ $w := mul (div $imgWidth 3) 2 }} {{/* is-3by2*/}}
-          {{ $h := $imgHeight }} 
+          {{ $h := $imgHeight }}
           {{ if not (gt $w $h) }}
             <img src="{{- $image.Permalink | relURL -}}" style="width: auto; margin:auto" alt="">
           {{ else }}
@@ -53,9 +53,9 @@
         {{- else }}
           {{- .Plain -}}
         {{- end -}}
-      </p> 
+      </p>
       <div class="action has-text-right">
-        <a href="{{- .Permalink | relURL -}}" class="button is-primary">
+        <a href="{{- .Permalink | relURL -}}" class="button is-info is-outlined">
                 {{ i18n "readMore" }}
             </a>
       </div>
